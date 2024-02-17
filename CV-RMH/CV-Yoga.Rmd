@@ -1,0 +1,122 @@
+---
+#name:
+surname: Dr. Rayna M. Harris
+position: "Education, Science, Community Engagement"
+#address:  
+#phone:  
+www: raynamharris.com
+#email: "rmharris@ucdavis.edu"
+twitter: raynamharris
+github: raynamharris
+#linkedin: raynamharris
+youtube: raynaharris8443
+instagram: raynaharris
+date: "`r format(Sys.time(), '%B %Y')`"
+output: vitae::moderncv
+fontsize: 11pt
+headcolor: "000000"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae)
+library(rorcid)
+library(tibble)
+library(scholar)
+library(tidyverse)
+library(pkgsearch)
+```
+
+I am a passionate teacher and enjoy helping others. I have mostly taught science and computer classes to aspiring doctors and engineers. The older I get, though, I am less concerned with helping people achieve their career goals and more interested in helping people maintain a happy, healthy lifestyle. I want to be a Yoga instructor to help locals and tourists in the Tahoe community improve their flexibility, alignment, strength, mindset, and heart health. 
+
+
+
+# Education
+
+```{r education, include = T}
+
+tribble(
+  ~Year, ~Type, ~Desc, 
+  
+  "2002 - 2006", "B.S.", "Biochemistry, The University of Texas at Austin", 
+  "2012 - 2017", "Ph.D.", "Cell and Molecular Biology, The University of Texas at Austin",
+  "2018 - 2023", "Postdoctoral Scholar", "University of California, Davis") %>% 
+  vitae::brief_entries(
+    Type,
+    Year, 
+    Desc
+  )
+
+```
+
+
+# Current Employment
+
+```{r experience, include = TRUE}
+
+tribble(
+  ~Year, ~Type, ~Desc,
+  "2023 - 2023", "Adjunct Faculty", "Lake Tahoe Community College",
+  "2021 - 2023", "Hostess", "River Ranch Lodge & Resturaunt",
+  "2020 - 2023", "Parking Attendant", "Palisades Tahoe at Alpine",
+  
+) %>% 
+  vitae::brief_entries(
+    Type,
+    Year, 
+    Desc
+  ) 
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+# Teaching Experience
+
+```{r}
+tribble(
+  ~ with, ~ what, ~ when, 
+  "Organic Chemistry III Lab (CHM 223L)", "Lake Tahoe Community College", "Spring 2023", 
+  "Cell and Molecular Biology (BIO 110)", "Lake Tahoe Community College", "Spring 2023", 
+  "Principles of Biology III (BIO 103)", "Lake Tahoe Community College", "Winter 2023", 
+  "Introduction to R", "University of California, Davis", "2022", 
+  #"Introduction to Cloud Computing", "University of California, Davis", "2022",
+  "Introduction to UNIX for Cloud Computing", "University of California, Davis", "2022",
+  "Instructor Training", "The Carpentries", "2016 - 2019",
+  "Biostatistics (SDS 328M)", "The University of Texas at Austin", "2017", 
+  "Problems in Modern Biology (BIO 301E)", "The University of Texas at Austin", "2013", 
+  "Organic Chemistory Laboratory (CH 210C)", "The University of Texas at Austin",  "2007 - 2010",
+) %>% 
+  brief_entries(with, when, what)
+```
+
+# Yoga Experience
+
+
+```{r}
+tribble(
+  ~Year, ~Type, ~Desc,
+  "10 hrs", "Palisades Yoga", "Olympic Valley, CA",
+  "15 hrs", "Mountain Lotus Yoga", "Tahoe City, CA",
+  "10 hrs", "Tahoe Yoga and Wellness Center", "Truckee, CA",
+  "15 hrs", "Black Swan Yoga", "Austin, TX",
+  "100 hrs", "BFree Yoga", "Austin, TX ",
+  "100 hrs", "Yoga With Adriene", "Online ",
+
+) %>% 
+  vitae::brief_entries(
+    Type,
+    Year, 
+    Desc
+  ) 
+```
+

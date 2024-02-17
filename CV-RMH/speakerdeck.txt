@@ -1,0 +1,9 @@
+Year;Title;Where
+2020;Shiny Musical Genes;University of California, Davis
+2020;A journey in ‘omics research from the bottom of the ocean to the top of a mountain;Sacramento State University
+2020;Peaks and valleys of prolactin-driven gene expression in parental care;University of California, Davis
+2019;Community-driven efforts to translate educational materials into many languages;FORCE 11 Annual Meeting 
+2019;RNAseq: A five course meal;University of California, Davis
+2019;Managing Multilingual Communities;rOpenSci Community Call
+2018;Usando y Enseñando R para Investigación Reproducible;R Ladies Buenos Aires
+2018;Zombie Brains: Microbial Mind Control;Nerd Nite Austin
