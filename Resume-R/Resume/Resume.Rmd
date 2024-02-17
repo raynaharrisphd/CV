@@ -1,0 +1,91 @@
+---
+name:  
+surname: Rayna Harris, PhD
+position: "          "
+#address: "Alpine Meadows, CA"
+phone: 512-657-2964
+www: www.raynaharris.com
+email: "raynaharris@palisadestahoe.com "
+twitter: raynamharris
+#github: raynamharris
+linkedin: raynamharris
+date: "`r format(Sys.time(), '%B %Y')`"
+output: vitae::awesomecv
+headcolor: 414141
+docname: résumé
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae)
+library(rorcid)
+library(tidyverse)
+```
+
+# Professional Summary
+
+I am interested in the Senior Strategy Analyst position at Alterra Mountain Company. I have worked at Palisades Tahoe at Alpine Meadows for four years in the Parking and Information Mountain Host Departments. I have a PhD in Cell and Molecular Biology and ten years of experience managing projects, analyzing data, and making data-driven decisions. My first-hand knowledge of Alterra mountains and ability to strategize and solve problems make me an excellent candidate for the Senior Strategy Analyst position.
+
+# Education
+
+
+```{r}
+
+edu <- do.call("rbind",
+  rorcid::orcid_educations("0000-0002-7943-5650")$`0000-0002-7943-5650`$`affiliation-group`$summaries
+)
+edu %>%
+  detailed_entries(
+    what = `education-summary.role-title`,
+    when = glue::glue("{`education-summary.start-date.year.value`} - {`education-summary.end-date.year.value`}"),
+    with = `education-summary.organization.name`,
+    where = `education-summary.organization.address.city`
+  )
+```
+
+# Employment
+
+```{r employment}
+tribble(
+  ~ role, ~ company, ~ loc, ~ dates, 
+   "Blah, Blah, Blah",  "Palisades Tahoe at Alpine Meadows - Information Mountain Host Lead", "Alpine Meadows, CA", "Oct 2023 - Current",
+  #"Barista and Cashier", "Crest Cafe", "Alpine Meadows, CA", "July 2023 - Present", 
+  "Adjunct Faculty, Biology Department", "Lake Tahoe Community College", "South Lake Tahoe, CA", "Jan 2023 - June 2024", 
+  #"Hostess", "River Ranch Lodge and Restaurant", "Alpine Meadows, CA", "Aug 2021 - Present", 
+  "Parking Supervisor", "Palisades Tahoe at Alpine Meadows", "Alpine Meadows, CA", "Nov 2020 - Jul 2023",
+  #"Nursery Assistant", "Rock & Rose Nursery + Landscaping ", "Truckee, CA","Jun 2020 - Oct 2021",
+  "Postdoctoral Scholar", " University of California, Davis", "Davis, CA", "May 2018 - Apr 2023",
+  "Laboratory Manager", "The University of Texas at Austin", "Austin, TX", "Oct 2010 - Sep 2012", 
+  "Teaching Specialist", "The University of Texas at Austin", "Austin, TX", "Jan 2007 - Dec 2010", 
+) %>% 
+  detailed_entries(role, dates, company, loc)
+```
+
+# Computer Skills
+
+Excel, HTML, LaTeX, Outlook, PowerPoint, Python, R, Square, TouchBistro, UNIX, Word     
+
+# Languages Spoken
+
+English, Spanish
+
+# Honors and Awards
+
+```{r honors, include = TRUE}
+
+tribble(
+  ~Year, ~Type, ~Desc,
+  "2019", "AAAS Community Engagement Fellowship", " ",
+  "2019", "rstudio::conf 2019 Diversity Scholarship", " ",
+  "2017", "Outstanding Graduate Student Academic Employee Award", "  ",
+  "2016, 17", "University Graduate Continuing Fellowship", " ",
+  "2014, 15, 16", "Academic Enrichment Fund Award", " ",
+ # "2013, 11, 15", "Honorable mention, National Science Foundation Graduate Research Fellowship", " ",
+) %>% 
+  vitae::detailed_entries(
+    Type,
+    Year, 
+    Desc
+  )
+
+```
