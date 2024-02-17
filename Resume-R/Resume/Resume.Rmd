@@ -9,10 +9,10 @@ email: "raynaharris@palisadestahoe.com "
 twitter: raynamharris
 #github: raynamharris
 linkedin: raynamharris
-date: "`r format(Sys.time(), '%B %Y')`"
+#date: "`r format(Sys.time(), '%B %Y')`"
 output: vitae::awesomecv
 headcolor: 414141
-docname: résumé
+docname: "`r format(Sys.time(), '%B %Y')`"
 ---
 
 ```{r setup, include=FALSE}
@@ -39,16 +39,33 @@ edu %>%
     what = `education-summary.role-title`,
     when = glue::glue("{`education-summary.start-date.year.value`} - {`education-summary.end-date.year.value`}"),
     with = `education-summary.organization.name`,
-    where = `education-summary.organization.address.city`
+    where = glue::glue("{`education-summary.organization.address.city`}, {`education-summary.organization.address.region`}")
   )
 ```
 
 # Employment
 
-```{r employment}
+```{r employment2}
 tribble(
-  ~ role, ~ company, ~ loc, ~ dates, 
-   "Blah, Blah, Blah",  "Palisades Tahoe at Alpine Meadows - Information Mountain Host Lead", "Alpine Meadows, CA", "Oct 2023 - Current",
+  ~ what, ~ when, ~ with, ~ where, ~why,
+  "Information Mountain Host Lead", "Oct 2023 - Current",  "Palisades Tahoe at Alpine Meadows", "Alpine Meadows, CA", c("Provide a friendly and welcoming environment for guests and provide customer service", "Manage a small team of 3-5 employees and assist other departments as needed"),
+ "Adjunct Faculty, Biology and Chemistry Departments", "Jan 2023 - June 2024", "Lake Tahoe Community College", "South Lake Tahoe, CA", c("Develop course syllabi, lesson plans, and assessments", "Mentor students in lecture and laboratory courses"),
+ "Parking Supervisor", "Nov 2020 - Jul 2023", "Palisades Tahoe at Alpine Meadows",  "Alpine Meadows, CA", c("Analyzed parking data and model parking lot use trends", "Established parking structures and assisted with traffic flow"),
+ "Postdoctoral Scholar", "May 2018 - Apr 2023", "The University of California, Davis", "Davis, CA", c("Managed large-scale, collaborative research projects", "Analyzed biomedical data, tested software, and generated technical reports")
+
+   ) %>%
+detailed_entries(what, when, with, where, why)
+
+```
+
+
+```{r employment, include = F}
+
+# Old Employment Format
+
+tribble(
+  ~ role, ~ company, ~ location, ~ dates, 
+   "Information Mountain Host Lead",  "Palisades Tahoe at Alpine Meadows", "Alpine Meadows, CA", "Oct 2023 - Current",
   #"Barista and Cashier", "Crest Cafe", "Alpine Meadows, CA", "July 2023 - Present", 
   "Adjunct Faculty, Biology Department", "Lake Tahoe Community College", "South Lake Tahoe, CA", "Jan 2023 - June 2024", 
   #"Hostess", "River Ranch Lodge and Restaurant", "Alpine Meadows, CA", "Aug 2021 - Present", 
@@ -58,7 +75,7 @@ tribble(
   "Laboratory Manager", "The University of Texas at Austin", "Austin, TX", "Oct 2010 - Sep 2012", 
   "Teaching Specialist", "The University of Texas at Austin", "Austin, TX", "Jan 2007 - Dec 2010", 
 ) %>% 
-  detailed_entries(role, dates, company, loc)
+  detailed_entries(role, dates, company, location)
 ```
 
 # Computer Skills
@@ -77,7 +94,7 @@ tribble(
   ~Year, ~Type, ~Desc,
   "2019", "AAAS Community Engagement Fellowship", " ",
   "2019", "rstudio::conf 2019 Diversity Scholarship", " ",
-  "2017", "Outstanding Graduate Student Academic Employee Award", "  ",
+  #"2017", "Outstanding Graduate Student Academic Employee Award", "  ",
   "2016, 17", "University Graduate Continuing Fellowship", " ",
   "2014, 15, 16", "Academic Enrichment Fund Award", " ",
  # "2013, 11, 15", "Honorable mention, National Science Foundation Graduate Research Fellowship", " ",
