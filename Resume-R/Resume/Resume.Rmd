@@ -22,9 +22,9 @@ library(rorcid)
 library(tidyverse)
 ```
 
-# Professional Summary
+# Summary
 
-I am interested in the Senior Strategy Analyst position at Alterra Mountain Company. I have worked at Palisades Tahoe at Alpine Meadows for four years in the Parking and Information Mountain Host Departments. I have a PhD in Cell and Molecular Biology and ten years of experience managing projects, analyzing data, and making data-driven decisions. My first-hand knowledge of Alterra mountains and ability to strategize and solve problems make me an excellent candidate for the Senior Strategy Analyst position.
+I am interested in the Director of Fitness & Dance Programs at Tahoe Flow Arts & Fitness. I have a PhD in Cell and Molecular Biology and ten years of experience managing projects, analyzing data, and communicating with diverse audiences. I am a 200-hour Yoga Alliance certified yoga instructor, and I aspire to teach beach yoga this summer. In addition to teaching biology, I also have experience teaching a computational biology instructor training program.
 
 # Education
 
@@ -42,18 +42,30 @@ edu %>%
     where = glue::glue("{`education-summary.organization.address.city`}, {`education-summary.organization.address.region`}")
   )
 ```
+# Certifications
 
-# Employment
+```{r certification}
+
+tribble(
+  ~Year, ~Type, ~Desc, ~City, 
+  "2024", "200-hour Hatha Yoga Teacher Training", "Palisades Yoga", "Olympic Valley, CA"
+) %>% 
+  vitae::detailed_entries(
+    Type,
+    Year, 
+    Desc,
+    City
+  )
+
+```
+
+# Current Employment
 
 ```{r employment2}
 tribble(
   ~ what, ~ when, ~ with, ~ where, ~why,
   "Information Mountain Host Lead", "Oct 2023 - Current",  "Palisades Tahoe at Alpine Meadows", "Alpine Meadows, CA", c("Provide a friendly and welcoming environment for guests and provide customer service", "Manage a small team of 3-5 employees and assist other departments as needed"),
- "Adjunct Faculty, Biology and Chemistry Departments", "Jan 2023 - June 2024", "Lake Tahoe Community College", "South Lake Tahoe, CA", c("Develop course syllabi, lesson plans, and assessments", "Mentor students in lecture and laboratory courses"),
- "Parking Supervisor", "Nov 2020 - Jul 2023", "Palisades Tahoe at Alpine Meadows",  "Alpine Meadows, CA", c("Analyzed parking data and model parking lot use trends", "Established parking structures and assisted with traffic flow"),
- "Postdoctoral Scholar", "May 2018 - Apr 2023", "The University of California, Davis", "Davis, CA", c("Managed large-scale, collaborative research projects", "Analyzed biomedical data, tested software, and generated technical reports")
-
-   ) %>%
+ "Adjunct Faculty, Biology and Chemistry Departments", "Jan 2023 - June 2024", "Lake Tahoe Community College", "South Lake Tahoe, CA", c("Develop course syllabi, lesson plans, and assessments", "Mentor students in lecture and laboratory courses") ) %>%
 detailed_entries(what, when, with, where, why)
 
 ```
@@ -86,9 +98,11 @@ Excel, HTML, LaTeX, Outlook, PowerPoint, Python, R, Square, TouchBistro, UNIX, W
 
 English, Spanish
 
-# Honors and Awards
 
-```{r honors, include = TRUE}
+
+```{r honors, include = F}
+
+# Honors and Awards
 
 tribble(
   ~Year, ~Type, ~Desc,
@@ -103,6 +117,32 @@ tribble(
     Type,
     Year, 
     Desc
+  )
+
+```
+
+
+# Service
+
+```{r service, include = TRUE}
+
+tribble(
+  ~Year, ~Type, ~Desc,
+  "2023", "Yoga Instructor ", "Courage Project",
+  #"2023", "Ambassador ", "5 Gyres",
+  #"2019", "Coordinator", "I Can Science, a National Geographic Video Series",
+  "2018", "Instructor Trainer", "The Carpentries",
+  "2017", "Secretary", "Software Carpentry Steering Committee",
+  "2016", "Poster Judge", "College of Natural Science Undergraduate Research Forum",
+  "2012 - 17", "Coordinator", "Annual Big Data in Biology Symposium",
+  "2014 - 16", "Coordinator", "Summer School for Big Data in Biology",
+  "2014", "Coordinator", "Transdisciplinary Graduate Student Luncheon",
+  "2009", "Spanish Translator", "INBio Park, Costa Rica",
+  " ", "Peer-reviewer", "AAS  Open  Research; Behavioral Ecology; Genes, Genomes & Genetics; Genes, Brains & Behavior; Journal of Experimental Zoology Part A; Nature; Physiology & Behavior; Proceedings of the Royal Society B; rOpenSci",) %>% 
+  vitae::brief_entries(
+    Desc,
+    Year, 
+    Type
   )
 
 ```
