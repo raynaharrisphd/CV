@@ -5,7 +5,7 @@ position: "          "
 #address: "Alpine Meadows, CA"
 phone: 512-657-2964
 www: www.raynaharris.com
-email: "raynaharris@palisadestahoe.com "
+email: "rayna.harris@gmail.com "
 twitter: raynamharris
 #github: raynamharris
 linkedin: raynamharris
@@ -64,7 +64,7 @@ tribble(
 ```{r employment2}
 tribble(
   ~ what, ~ when, ~ with, ~ where, ~why,
-  "Information Mountain Host Lead", "Oct 2023 - Current",  "Palisades Tahoe at Alpine Meadows", "Alpine Meadows, CA", c("Provide a friendly and welcoming environment for guests and provide customer service", "Manage a small team of 3-5 employees and assist other departments as needed"),
+  "Mountain Host Lead", "Oct 2023 - Current",  "Palisades Tahoe at Alpine Meadows", "Alpine Meadows, CA", c("Provide a friendly and welcoming environment for guests and provide customer service", "Manage a team of 20 employees and assist other departments as needed"),
  "Adjunct Faculty, Biology and Chemistry Departments", "Jan 2023 - June 2024", "Lake Tahoe Community College", "South Lake Tahoe, CA", c("Develop course syllabi, lesson plans, and assessments", "Mentor students in lecture and laboratory courses") ) %>%
 detailed_entries(what, when, with, where, why)
 
