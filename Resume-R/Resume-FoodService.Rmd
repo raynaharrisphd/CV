@@ -1,0 +1,87 @@
+---
+#name:
+surname: Rayna M. Harris, PhD
+position: "Hostess / Back of House"
+#address:  
+phone: 512-657-2964
+www: www.raynaharris.com/
+email: "rayna.harris@gmail.com"
+#twitter: raynamharris
+#github: raynamharris
+linkedin: raynamharris
+youtube: raynaharris8443
+instagram: raynaharris
+date: "`r format(Sys.time(), '%B %Y')`"
+output: vitae::moderncv
+fontsize: 11pt
+headcolor: "000000"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae)
+library(rorcid)
+library(tidyverse)
+```
+
+I am interested in working at Christy Hill as a hostess or another postion in the back of house. I live in Alpine Meadows and have experience at the River Ranch and Crest Cafe. 
+
+# Education
+
+
+```{r education}
+tribble(
+  ~Year, ~Type, ~Desc, 
+  
+  "2002 - 2006", "B.S", "Biochemistry, The University of Texas at Austin", 
+  "2012 - 2017", "Ph.D", "Cell and Molecular Biology, The University of Texas at Austin",
+  "2018 - 2023", "Postdoctoral Scholar", "University of California, Davis") %>% 
+  vitae::brief_entries(
+    Type,
+    Year, 
+    Desc
+  )
+```
+
+# Current Employment
+
+```{r employment current}
+tribble(
+  ~Year, ~Type, ~Desc,
+  "Since 2024", "Yoga Instructor", "Sport Haus at Sugar Bowl Resort",
+  "Since 2024", "Yoga Instructor", "Tahoe Flow Arts & Fitness",
+  "Since 2023", "Adjunct Faculty", "Lake Tahoe Community College",
+  "Since 2020", "Parking Attendant", "Palisades Tahoe at Alpine",
+  
+) %>% 
+  vitae::brief_entries(
+    Type,
+    Year, 
+    Desc
+  ) 
+
+```
+
+
+# Relevant Experience
+
+```{r experience current}
+tribble(
+  ~Year, ~Type, ~Desc,
+  "2023 - 2024", "Barista", "Crest Cafe, Alpine Meadows, CA", 
+  "2023 - 2024", "Information Mountain Host Lead",  "Palisades Tahoe at Alpine", 
+  "2021 - 2024", "Hostess", "River Ranch Lodge and Restaurant, Alpine Meadows, CA", 
+) %>%
+  vitae::brief_entries(
+    Type,
+    Year, 
+    Desc
+  ) 
+
+```
+
+# Computer Skills
+
+TouchBistro + Google Suite, HTML, LaTeX, Microsoft Office, Python, R, Square, UNIX  
+
+
