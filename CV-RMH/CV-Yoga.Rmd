@@ -27,7 +27,7 @@ library(tidyverse)
 library(pkgsearch)
 ```
 
-I bought my first paddle board in 2016 for the sole purpose to doing and teaching Stand-up Paddle (SUP) yoga. In 2023 I finally pursued and received a 200 hour Hatha Yoga certification, and I taught SUP yoga with Tahoe Flow Arts and Fitness at Mourelatos Lakeshore Resort the summer of 2024. I've take SUP yoga class with Kayla Mountain Lotus and Vinyasa yoga classes with Kellee at various locations. I would love to join the Mountain Lotus team to help with the SUP yoga classes and more.
+I bought my first paddle board in 2016 with the vision of eventually teaching Stand-up Paddle (SUP) yoga. In 2023 I  pursued and received a 200-hour Hatha Yoga certification, and I taught SUP yoga with Tahoe Flow Arts and Fitness at Mourelatos Lakeshore Resort in 2024. I've taken SUP yoga classes with Kayla at Mountain Lotus, and I would love to join the Mountain Lotus team to teach SUP yoga classes and more!
 
 # Education
 
@@ -70,6 +70,7 @@ tribble(
 
 tribble(
   ~Year, ~Type, ~Desc,
+  "2025", "Yoga Instructor", "Sport Haus at Sugar Bowl",
   "Since 2024", "Yoga Instructor", "Tahoe Flow Arts & Fitness",
   "Since 2023", "Adjunct Faculty", "Lake Tahoe Community College",
   "Since 2020", "Parking Attendant", "Palisades Tahoe at Alpine",
@@ -89,6 +90,7 @@ tribble(
 ```{r}
 tribble(
   ~Year, ~Type, ~Desc,
+  "2025", "Restorative Yoga", "Sport Haus at Sugar Bowl",
   "2024 - 2025", "Hatha and Vinyasa Yoga", "Tahoe Flow Arts & Fitness, Ritz Carlton Northstar",
   "2024","Beach Yoga and Stand Up Paddle Yoga, Tahoe Flow Arts & Fitness", "Mourelatos Lakeshore Resort", 
   "2024", "Yoga Retreat", "La Fuerza Latina, Frog Lake Huts, Truckee, CA", 
@@ -102,25 +104,20 @@ tribble(
 ```
 
 
+# Service
 
-# Science Teaching Experience
+```{r service, include = TRUE}
 
-```{r}
 tribble(
-  ~ with, ~ what, ~ when, 
-  "Anatomy & Physiology Lab (BIO 203 - 205)", "Lake Tahoe Community College", "2024 - 2025", 
-   "Dual Credit Chemistry (CHM 100)", "Lake Tahoe Community College and South Lake Tahoe High School", "Fall 2024", 
-  "Organic Chemistry III Lab (CHM 223L)", "Lake Tahoe Community College", "Spring 2023", 
-  "Cell and Molecular Biology (BIO 110)", "Lake Tahoe Community College", "Spring 2023", 
-  "Principles of Biology III (BIO 103)", "Lake Tahoe Community College", "Winter 2023", 
-  #"Introduction to R", "University of California, Davis", "2022", 
-  #"Introduction to Cloud Computing", "University of California, Davis", "2022",
-  "Introduction to UNIX for Cloud Computing", "University of California, Davis", "2022",
-  "Instructor Training", "The Carpentries", "2016 - 2019",
-  "Biostatistics (SDS 328M)", "The University of Texas at Austin", "2017", 
-  "Problems in Modern Biology (BIO 301E)", "The University of Texas at Austin", "2013", 
-  "Organic Chemistory Laboratory (CH 210C)", "The University of Texas at Austin",  "2007 - 2010",
-) %>% 
-  brief_entries(with, when, what)
+  ~Year, ~Type, ~Desc,
+  "2023 - 2025", "Volunteer Yoga Instructor ", " The Courage Project",
+  ) %>% 
+  vitae::brief_entries(
+    Desc,
+    Year, 
+    Type
+  )
+
 ```
+
 
