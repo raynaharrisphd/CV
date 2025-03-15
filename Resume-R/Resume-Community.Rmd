@@ -1,0 +1,152 @@
+---
+#name:
+surname: Rayna M. Harris, PhD
+position: "Community Coordinator"
+#address:  
+phone: 512-657-2964
+www: www.raynaharris.com/
+email: "rayna.harris@gmail.com"
+#twitter: raynamharris
+#github: raynamharris
+linkedin: raynamharris
+youtube: raynaharris8443
+instagram: raynaharris
+date: "`r format(Sys.time(), '%B %Y')`"
+output: vitae::moderncv
+fontsize: 11pt
+headcolor: "000000"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae)
+library(rorcid)
+library(tidyverse)
+```
+
+I am interested in the Lift Community Coordinator position. I have over ten years of experience managing communities and communicating with diverse audiences. I have nearly twenty years of experience as an educator, including teaching biology, chemistry, data science, and yoga. I love teaching and coordinating community efforts because both are great ways to help people achieve their goals and improve their well-being.
+
+# Education
+
+
+```{r education}
+tribble(
+  ~Year, ~Type, ~Desc, 
+  
+  "2002 - 2006", "B.S", "Biochemistry, The University of Texas at Austin", 
+  "2012 - 2017", "Ph.D", "Cell and Molecular Biology, The University of Texas at Austin",
+  "2018 - 2023", "Postdoctoral Scholar", "University of California, Davis") %>% 
+  vitae::brief_entries(
+    Type,
+    Year, 
+    Desc
+  )
+```
+
+# Current Employment
+
+```{r employment current}
+tribble(
+  ~Year, ~Type, ~Desc,
+  "Since 2024", "Yoga Instructor", "Tahoe Flow Arts & Fitness",
+  "Since 2023", "Adjunct Faculty", "Lake Tahoe Community College",
+  #"Since 2020", "Parking Attendant", "Palisades Tahoe at Alpine",
+  
+) %>% 
+  vitae::brief_entries(
+    Type,
+    Year, 
+    Desc
+  ) 
+
+```
+
+
+```{r employment, include = F}
+
+# Old Employment Format
+
+tribble(
+  ~ role, ~ company, ~ location, ~ dates, 
+   "Information Mountain Host Lead",  "Palisades Tahoe at Alpine Meadows", "Alpine Meadows, CA", "Oct 2023 - Current",
+  #"Barista and Cashier", "Crest Cafe", "Alpine Meadows, CA", "July 2023 - Present", 
+  "Adjunct Faculty, Biology Department", "Lake Tahoe Community College", "South Lake Tahoe, CA", "Jan 2023 - June 2024", 
+  #"Hostess", "River Ranch Lodge and Restaurant", "Alpine Meadows, CA", "Aug 2021 - Present", 
+  "Parking Supervisor", "Palisades Tahoe at Alpine Meadows", "Alpine Meadows, CA", "Nov 2020 - Jul 2023",
+  #"Nursery Assistant", "Rock & Rose Nursery + Landscaping ", "Truckee, CA","Jun 2020 - Oct 2021",
+  "Postdoctoral Scholar", " University of California, Davis", "Davis, CA", "May 2018 - Apr 2023",
+  "Laboratory Manager", "The University of Texas at Austin", "Austin, TX", "Oct 2010 - Sep 2012", 
+  "Teaching Specialist", "The University of Texas at Austin", "Austin, TX", "Jan 2007 - Dec 2010", 
+) %>% 
+  detailed_entries(role, dates, company, location)
+```
+
+# Relevant Experience
+
+```{r experience current}
+tribble(
+  ~Year, ~Type, ~Desc,
+  "2023 - 2024", "Information Mountain Host Lead",  "Palisades Tahoe at Alpine Meadows", 
+  "2021 - 2024", "Hostess", "River Ranch Lodge and Restaurant, Alpine Meadows, CA", 
+  "2018 - 2019", "Community Engagment Manager", "Data Commons Pilot Phase Consotium",
+  "2012 - 2017", "Coordinator", "Annual Big Data in Biology Symposium",
+  "2014 - 2016", "Coordinator", "Summer School for Big Data in Biology",
+  "2014", "Coordinator", "Transdisciplinary Graduate Student Luncheon",
+  "2010 - 2012", "Laboratory Manager", "The University of Texas at Austin", 
+) %>%
+  vitae::brief_entries(
+    Type,
+    Year, 
+    Desc
+  ) 
+
+```
+
+# Computer Skills
+
+Google Suite, HTML, LaTeX, Microsoft Office, Python, R, Square, TouchBistro, UNIX  
+
+
+```{r honors, include = F}
+
+# Honors and Awards
+
+tribble(
+  ~Year, ~Type, ~Desc,
+  "2019", "AAAS Community Engagement Fellowship", " ",
+  "2019", "rstudio::conf 2019 Diversity Scholarship", " ",
+  #"2017", "Outstanding Graduate Student Academic Employee Award", "  ",
+  "2016, 17", "University Graduate Continuing Fellowship", " ",
+  "2014, 15, 16", "Academic Enrichment Fund Award", " ",
+ # "2013, 11, 15", "Honorable mention, National Science Foundation Graduate Research Fellowship", " ",
+) %>% 
+  vitae::detailed_entries(
+    Type,
+    Year, 
+    Desc
+  )
+
+```
+
+
+# Community Service
+
+```{r service, include = TRUE}
+
+tribble(
+  ~Year, ~Type, ~Desc,
+  "Since 2023", "Volunteer Yoga Instructor", "Courage Project",
+  #"2023", "Ambassador ", "5 Gyres",
+  #"2019", "Coordinator", "I Can Science, a National Geographic Video Series",
+ # "2018", "Instructor Trainer", "The Carpentries",
+  "2017", "Secretary", "Software Carpentry Steering Committee",
+  #"2016", "Poster Judge", "College of Natural Science Undergraduate Research Forum",
+  "2009", "Spanish Translator", "INBio Park, Costa Rica",
+  " ", "AAS  Open  Research; Behavioral Ecology; Genes, Genomes & Genetics; Genes, Brains & Behavior; Journal of Experimental Zoology Part A; Nature; Physiology & Behavior; Proceedings of the Royal Society B; rOpenSci","Peer-reviewer", ) %>% 
+  vitae::brief_entries(
+    Desc,
+    Year, 
+    Type
+  )
+
+```

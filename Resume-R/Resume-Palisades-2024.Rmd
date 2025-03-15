@@ -1,0 +1,151 @@
+---
+name:  
+surname: Rayna Harris, PhD
+position: "          "
+#address: "Alpine Meadows, CA"
+phone: 512-657-2964
+www: www.raynaharris.com
+email: "rayna.harris@gmail.com "
+twitter: raynamharris
+#github: raynamharris
+linkedin: raynamharris
+#date: "`r format(Sys.time(), '%B %Y')`"
+output: vitae::awesomecv
+headcolor: 414141
+docname: "`r format(Sys.time(), '%B %Y')`"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae)
+library(rorcid)
+library(tidyverse)
+```
+
+# Summary
+
+I am interested in returning to the position of part-time Parking Attendant or Parking Supervisor at Palisades Tahoe at Alpine. My primary employment is at Lake Tahoe Community College, but I can work weekends and holidays. 
+
+# Education
+
+
+```{r}
+
+edu <- do.call("rbind",
+  rorcid::orcid_educations("0000-0002-7943-5650")$`0000-0002-7943-5650`$`affiliation-group`$summaries
+)
+edu %>%
+  detailed_entries(
+    what = `education-summary.role-title`,
+    when = glue::glue("{`education-summary.start-date.year.value`} - {`education-summary.end-date.year.value`}"),
+    with = `education-summary.organization.name`,
+    where = glue::glue("{`education-summary.organization.address.city`}, {`education-summary.organization.address.region`}")
+  )
+```
+
+
+```{r certification, include = F}
+
+# Certifications
+
+tribble(
+  ~Year, ~Type, ~Desc, ~City, 
+  "2024", "200-hour Hatha Yoga Teacher Training", "Palisades Yoga", "Olympic Valley, CA"
+) %>% 
+  vitae::detailed_entries(
+    Type,
+    Year, 
+    Desc,
+    City
+  )
+
+```
+
+# Current Employment
+
+```{r employment2}
+tribble(
+  ~ what, ~ when, ~ with, ~ where, ~why,
+  "Yoga Instructor", "Since June 2024",  "Tahoe Flow Arts and Fitness", "Tahoe Vista, CA", c("Teach Vinyasa Yoga, Beach Yoga, and Stand-Up Paddle Yoga", "Develope unique yoga sequences and spotify playlists for each class"),
+ "Adjunct Faculty, Biology and Chemistry Departments", "Since January 2023", "Lake Tahoe Community College", "South Lake Tahoe, CA", c("Teach and mentor students in lecture and laboratory courses", "Develop course syllabi, lesson plans, and assessments") ) %>%
+detailed_entries(what, when, with, where, why)
+
+```
+
+# Previous Employment
+
+```{r employment, include = T}
+
+tribble(
+  ~ role, ~ company, ~ location, ~ dates, 
+   "Information Mountain Host Lead",  "Palisades Tahoe at Alpine Meadows", "Alpine Meadows, CA", "Oct 2023 - April 2024",
+  "Barista and Cashier", "Crest Cafe", "Alpine Meadows, CA", "July 2023 - August 2024", 
+  #"Adjunct Faculty, Biology Department", "Lake Tahoe Community College", "South Lake Tahoe, CA", "Jan 2023 - June 2024", 
+  "Hostess", "River Ranch Lodge and Restaurant", "Alpine Meadows, CA", "Aug 2021 - September 2024", 
+  "Parking Supervisor", "Palisades Tahoe at Alpine Meadows", "Alpine Meadows, CA", "Nov 2020 - Jul 2023",
+  #"Nursery Assistant", "Rock & Rose Nursery + Landscaping ", "Truckee, CA","Jun 2020 - Oct 2021",
+  "Postdoctoral Scholar", " University of California, Davis", "Davis, CA", "May 2018 - Apr 2023",
+  "Laboratory Manager", "The University of Texas at Austin", "Austin, TX", "Oct 2010 - Sep 2012", 
+  "Teaching Specialist", "The University of Texas at Austin", "Austin, TX", "Jan 2007 - Dec 2010", 
+) %>% 
+  detailed_entries(role, dates, company, location)
+```
+
+# Computer Skills
+
+Excel, HTML, LaTeX, Outlook, PowerPoint, Python, R, Square, TouchBistro, UNIX, Word     
+
+# Languages Spoken
+
+English, Spanish
+
+
+
+```{r honors, include = F}
+
+# Honors and Awards
+
+tribble(
+  ~Year, ~Type, ~Desc,
+  "2019", "AAAS Community Engagement Fellowship", " ",
+  "2019", "rstudio::conf 2019 Diversity Scholarship", " ",
+  #"2017", "Outstanding Graduate Student Academic Employee Award", "  ",
+  "2016, 17", "University Graduate Continuing Fellowship", " ",
+  "2014, 15, 16", "Academic Enrichment Fund Award", " ",
+ # "2013, 11, 15", "Honorable mention, National Science Foundation Graduate Research Fellowship", " ",
+) %>% 
+  vitae::detailed_entries(
+    Type,
+    Year, 
+    Desc
+  )
+
+```
+
+
+
+
+```{r service, include = F}
+
+# Service
+
+tribble(
+  ~Year, ~Type, ~Desc,
+  "2023", "Yoga Instructor ", "Courage Project",
+  #"2023", "Ambassador ", "5 Gyres",
+  #"2019", "Coordinator", "I Can Science, a National Geographic Video Series",
+  "2018", "Instructor Trainer", "The Carpentries",
+  "2017", "Secretary", "Software Carpentry Steering Committee",
+  "2016", "Poster Judge", "College of Natural Science Undergraduate Research Forum",
+  "2012 - 17", "Coordinator", "Annual Big Data in Biology Symposium",
+  "2014 - 16", "Coordinator", "Summer School for Big Data in Biology",
+  "2014", "Coordinator", "Transdisciplinary Graduate Student Luncheon",
+  "2009", "Spanish Translator", "INBio Park, Costa Rica",
+  " ", "Peer-reviewer", "AAS  Open  Research; Behavioral Ecology; Genes, Genomes & Genetics; Genes, Brains & Behavior; Journal of Experimental Zoology Part A; Nature; Physiology & Behavior; Proceedings of the Royal Society B; rOpenSci",) %>% 
+  vitae::brief_entries(
+    Desc,
+    Year, 
+    Type
+  )
+
+```
