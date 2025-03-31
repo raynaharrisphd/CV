@@ -1,7 +1,7 @@
 ---
 #name:
-surname: Dr. Rayna M. Harris
-position: "SUP Yoga Instructor"
+surname: Rayna Harris,
+position: "Yoga Instructor"
 #address:  
 phone: 512-657-2964
 www: www.raynaharris.com/yoga/
@@ -27,7 +27,9 @@ library(tidyverse)
 library(pkgsearch)
 ```
 
-I bought my first paddle board in 2016 with the vision of eventually teaching Stand-up Paddle (SUP) yoga. In 2023 I  pursued and received a 200-hour Hatha Yoga certification, and I taught SUP yoga with Tahoe Flow Arts and Fitness at Mourelatos Lakeshore Resort in 2024. I've taken SUP yoga classes with Kayla at Mountain Lotus, and I would love to join the Mountain Lotus team to teach SUP yoga classes and more!
+I am interested in the opportunity to contribute as a Yoga Instructor at Palisades Yoga, where the community, instructors, and location create an ideal environment for sharing the practice of yoga. With two years of teaching experience through the Courage Project and an additional year at Tahoe Flow Arts and Fitness, I feel prepared to lead engaging and mindful classes. I would be happy to take on a regular class, such as Restore & Flow or Hatha Flow, and I’m also available to substitute for Candlelight Vinyasa and Yoga for Strength as needed.    
+
+$\\$
 
 # Education
 
@@ -35,10 +37,9 @@ I bought my first paddle board in 2016 with the vision of eventually teaching St
 
 tribble(
   ~Year, ~Type, ~Desc, 
-  
-  "2002 - 2006", "B.S", "Biochemistry, The University of Texas at Austin", 
+  "2018 - 2023", "Postdoctoral Scholar", "University of California, Davis",
   "2012 - 2017", "Ph.D", "Cell and Molecular Biology, The University of Texas at Austin",
-  "2018 - 2023", "Postdoctoral Scholar", "University of California, Davis") %>% 
+  "2002 - 2006", "B.S", "Biochemistry, The University of Texas at Austin") %>%
   vitae::brief_entries(
     Type,
     Year, 
@@ -70,7 +71,7 @@ tribble(
 
 tribble(
   ~Year, ~Type, ~Desc,
-  "2025", "Yoga Instructor", "Sport Haus at Sugar Bowl",
+  "Winter 2025", "Yoga Instructor", "Sport Haus at Sugar Bowl",
   "Since 2024", "Yoga Instructor", "Tahoe Flow Arts & Fitness",
   "Since 2023", "Adjunct Faculty", "Lake Tahoe Community College",
   "Since 2020", "Parking Attendant", "Palisades Tahoe at Alpine",
